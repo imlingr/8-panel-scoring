@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>113職業訪談-自評＆互評表</title>
+    <title>🤠113職業訪談-自評＆互評表</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -155,10 +154,9 @@
 </head>
 <body class="py-8 px-4">
     <div class="form-container p-6 md:p-8">
-        <!-- 表單頂部圖片 - 已更新 -->
         <div class="text-center mb-6">
             <img src="https://lh3.googleusercontent.com/pw/AP1GczNXDp3p02uknh_-hoyMzneujGrAXG210XUd_rkskHpWdXauH3OJ8jK_14rEwYzcG5h8u3J_X2FBTgVdhDcO4tdJe_BbDE7uFLgGeQIAN2lvsKx4lMaYjSPfSf1jR3Sam6gVROPTq9Afd10tIWMlW86l=w1920-h480-s-no-gm?authuser=0" alt="表單頂部圖片" class="header-logo mx-auto">
-        </div>
+            </div>
         
         <h1 class="text-2xl md:text-3xl font-bold text-center mb-6 text-indigo-700">113職業訪談-自評＆互評表</h1>
         
@@ -175,9 +173,7 @@
             </div>
         </div>
 
-        <!-- 表單區域 -->
         <div id="formContainer">
-            <!-- 班級選擇頁面 - 已更新圖標和布局 -->
             <div id="classSelection" class="form-page">
                 <h2 class="text-xl font-semibold mb-4 flex items-center">
                     <span class="bg-indigo-600 text-white rounded-full w-7 h-7 flex items-center justify-center mr-2">1</span>
@@ -200,15 +196,13 @@
                 </div>
             </div>
 
-            <!-- 組別選擇頁面 -->
             <div id="groupSelection" class="form-page hidden">
                 <h2 class="text-xl font-semibold mb-4 flex items-center">
                     <span class="bg-indigo-600 text-white rounded-full w-7 h-7 flex items-center justify-center mr-2">2</span>
                     請選擇您的組別
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6" id="groupOptions">
-                    <!-- 組別選項將由JavaScript動態生成 -->
-                </div>
+                    </div>
                 <div class="flex justify-between">
                     <button class="btn-secondary px-6 py-2 rounded-lg font-medium" onclick="prevPage('classSelection')">
                         上一步
@@ -219,15 +213,13 @@
                 </div>
             </div>
 
-            <!-- 自評-選擇自己頁面 -->
             <div id="selfSelection" class="form-page hidden">
                 <h2 class="text-xl font-semibold mb-4 flex items-center">
                     <span class="bg-indigo-600 text-white rounded-full w-7 h-7 flex items-center justify-center mr-2">3</span>
                     請選擇您是哪一位組員
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6" id="memberOptions">
-                    <!-- 組員選項將由JavaScript動態生成 -->
-                </div>
+                    </div>
                 <div class="flex justify-between">
                     <button class="btn-secondary px-6 py-2 rounded-lg font-medium" onclick="prevPage('groupSelection')">
                         上一步
@@ -238,7 +230,6 @@
                 </div>
             </div>
 
-            <!-- 自評-工作任務頁面 -->
             <div id="selfTasks" class="form-page hidden">
                 <h2 class="text-xl font-semibold mb-4 flex items-center">
                     <span class="bg-indigo-600 text-white rounded-full w-7 h-7 flex items-center justify-center mr-2">4</span>
@@ -304,7 +295,6 @@
                 </div>
             </div>
 
-            <!-- 自評-投入程度頁面 -->
             <div id="selfEffort" class="form-page hidden">
                 <h2 class="text-xl font-semibold mb-4 flex items-center">
                     <span class="bg-indigo-600 text-white rounded-full w-7 h-7 flex items-center justify-center mr-2">5</span>
@@ -362,7 +352,6 @@
                 </div>
             </div>
 
-            <!-- 自評-評分頁面 -->
             <div id="selfRating" class="form-page hidden">
                 <h2 class="text-xl font-semibold mb-4 flex items-center">
                     <span class="bg-indigo-600 text-white rounded-full w-7 h-7 flex items-center justify-center mr-2">6</span>
@@ -401,15 +390,13 @@
                 </div>
             </div>
 
-            <!-- 互評-選擇組員頁面 -->
             <div id="peerSelection" class="form-page hidden">
                 <h2 class="text-xl font-semibold mb-4 flex items-center">
                     <span class="bg-indigo-600 text-white rounded-full w-7 h-7 flex items-center justify-center mr-2">7</span>
                     請選擇您要評價的組員 (<span id="peerEvalCount">0</span>/4)
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6" id="peerOptions">
-                    <!-- 組員選項將由JavaScript動態生成 -->
-                </div>
+                    </div>
                 <div class="flex justify-between">
                     <button class="btn-secondary px-6 py-2 rounded-lg font-medium" onclick="prevPage('selfRating')">
                         上一步
@@ -420,7 +407,6 @@
                 </div>
             </div>
 
-            <!-- 互評-工作任務頁面 -->
             <div id="peerTasks" class="form-page hidden">
                 <h2 class="text-xl font-semibold mb-4 flex items-center">
                     <span class="bg-indigo-600 text-white rounded-full w-7 h-7 flex items-center justify-center mr-2">8</span>
@@ -486,7 +472,6 @@
                 </div>
             </div>
 
-            <!-- 互評-評分頁面 -->
             <div id="peerRating" class="form-page hidden">
                 <h2 class="text-xl font-semibold mb-4 flex items-center">
                     <span class="bg-indigo-600 text-white rounded-full w-7 h-7 flex items-center justify-center mr-2">9</span>
@@ -525,7 +510,6 @@
                 </div>
             </div>
 
-            <!-- 確認頁面 -->
             <div id="confirmation" class="form-page hidden">
                 <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
                     <div class="flex">
@@ -567,8 +551,7 @@
                 <div class="mb-6">
                     <h3 class="font-medium text-gray-700 mb-2">互評</h3>
                     <div id="peerEvalSummary" class="space-y-4">
-                        <!-- 互評摘要將由JavaScript動態生成 -->
-                    </div>
+                        </div>
                 </div>
 
                 <div class="flex justify-between">
@@ -581,7 +564,6 @@
                 </div>
             </div>
 
-            <!-- 提交成功頁面 -->
             <div id="success" class="form-page hidden">
                 <div class="text-center py-10">
                     <svg class="mx-auto h-20 w-20 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -594,628 +576,621 @@
         </div>
     </div>
 
-    <!-- 載入中遮罩 -->
     <div id="loadingOverlay" class="loading-overlay hidden">
         <div class="spinner"></div>
         <p class="text-gray-700 font-medium">提交中，請稍候...</p>
     </div>
 
     <script>
-    // 班級和組別資料
-    const classGroups = {
-        '809': [
-            { group: '第1組', members: ['04林藤諺', '12謝秉玹', '15邱雅涵', '21陳冠瑜', '24黃星瑜'] },
-            { group: '第2組', members: ['03林駿成', '09黃珺', '17張郁婍', '22童于芳', '25黃渝甄'] },
-            { group: '第3組', members: ['01王泉象', '12謝秉玹', '08曾唯祐', '14林芊樂', '19張學暄'] },
-            { group: '第4組', members: ['06張恩瑞', '10劉修齊', '16洪舒芸', '20陳昀彤', '23黃采潔'] },
-            { group: '第5組', members: ['02李昊叡', '07曹煜承', '11劉秩綸', '18張宸語', '26謝旻珊'] }
-        ],
-        '818': [
-            { group: '第1組', members: ['08陳奕崴', '11蔡能筌', '12蕭安祐', '21劉予謙', '27向文文'] },
-            { group: '第2組', members: ['02李和樂', '03李哲廷', '09歐祐綸', '17林可惟', '26羅培芯'] },
-            { group: '第3組', members: ['04林品佑', '11蔡能筌', '22蔡璦忻', '23蕭安妍', '25藍心言'] },
-            { group: '第4組', members: ['06洪晨耀', '13薛牧宸', '14龐仕杰', '15王婧芸', '18孫菉葉'] },
-            { group: '第5組', members: ['01王家薰', '07張嘉宏', '16李之瀠', '20陳子姸', '24蕭安妮'] }
-        ]
-    };
-
-    // 表單資料儲存
-    let formData = {
-        class: '', group: '', self: '',
-        selfTasks: [], otherSelfTask: '',
-        selfEffort: [], otherSelfEffort: '',
-        selfRating: '', selfComment: '',
-        peerEvals: [], // 每個元素格式: { peer: '姓名', tasks: [], otherTask: '', rating: '', comment: '' }
-        timestamp: ''
-    };
-
-    // 當前互評相關
-    let peersToEvaluate = []; // 當前選擇組別後，需要評價的組員列表 (排除自己)
-    let currentEvaluatingPeerName = ''; // 當前正在評價的組員姓名
-    let formSubmitted = false;
-
-    // 頁面切換函數
-    function showPage(pageId) {
-        document.querySelectorAll('.form-page').forEach(page => {
-            page.classList.add('hidden');
-        });
-        const targetPage = document.getElementById(pageId);
-        if (targetPage) {
-            targetPage.classList.remove('hidden');
-        }
-        updateProgressBar(pageId);
-    }
-
-    function prevPage(pageId) {
-        showPage(pageId);
-    }
-
-    function updateProgressBar(pageId) {
-        const progressMap = {
-            'classSelection': 0, 'groupSelection': 20, 'selfSelection': 20,
-            'selfTasks': 40, 'selfEffort': 40, 'selfRating': 40,
-            'peerSelection': 60, 'peerTasks': 80, 'peerRating': 80,
-            'confirmation': 100, 'success': 100
+        // 班級和組別資料
+        const classGroups = {
+            '809': [
+                {
+                    group: '第1組',
+                    members: ['04林藤諺', '12謝秉玹', '15邱雅涵', '21陳冠瑜', '24黃星瑜']
+                },
+                {
+                    group: '第2組',
+                    members: ['03林駿成', '09黃珺', '17張郁婍', '22童于芳', '25黃渝甄']
+                },
+                {
+                    group: '第3組',
+                    members: ['01王泉象', '12謝秉玹', '08曾唯祐', '14林芊樂', '19張學暄']
+                },
+                {
+                    group: '第4組',
+                    members: ['06張恩瑞', '10劉修齊', '16洪舒芸', '20陳昀彤', '23黃采潔']
+                },
+                {
+                    group: '第5組',
+                    members: ['02李昊叡', '07曹煜承', '11劉秩綸', '18張宸語', '26謝旻珊']
+                }
+            ],
+            '818': [
+                {
+                    group: '第1組',
+                    members: ['08陳奕崴', '11蔡能筌', '12蕭安祐', '21劉予謙', '27向文文']
+                },
+                {
+                    group: '第2組',
+                    members: ['02李和樂', '03李哲廷', '09歐祐綸', '17林可惟', '26羅培芯']
+                },
+                {
+                    group: '第3組',
+                    members: ['04林品佑', '11蔡能筌', '22蔡璦忻', '23蕭安妍', '25藍心言']
+                },
+                {
+                    group: '第4組',
+                    members: ['06洪晨耀', '13薛牧宸', '14龐仕杰', '15王婧芸', '18孫菉葉']
+                },
+                {
+                    group: '第5組',
+                    members: ['01王家薰', '07張嘉宏', '16李之瀠', '20陳子姸', '24蕭安妮']
+                }
+            ]
         };
-        let progress = progressMap[pageId] !== undefined ? progressMap[pageId] : 0;
 
-        if (pageId.startsWith('peer') && peersToEvaluate.length > 0) {
-            const evaluatedCount = formData.peerEvals.filter(p => p.rating && p.comment).length;
-            let currentPeerOrder = formData.peerEvals.findIndex(p => p.peer === currentEvaluatingPeerName);
-             if (currentPeerOrder === -1 && formData.peerEvals.length < peersToEvaluate.length) currentPeerOrder = formData.peerEvals.length;
-             else if (currentPeerOrder === -1) currentPeerOrder = Math.max(0, peersToEvaluate.length -1) ;
+        // 表單資料儲存
+        let formData = {
+            class: '',
+            group: '',
+            self: '',
+            selfTasks: [],
+            otherSelfTask: '',
+            selfEffort: [],
+            otherSelfEffort: '',
+            selfRating: '',
+            selfComment: '',
+            peerEvals: [],
+            timestamp: ''
+        };
 
+        // 當前互評的組員索引
+        let currentPeerIndex = 0;
+        let evaluatedPeers = [];
+        let formSubmitted = false;
 
-            if (pageId === 'peerSelection') {
-                progress = 60 + (evaluatedCount / peersToEvaluate.length) * 20;
-            } else if (pageId === 'peerTasks') {
-                progress = 60 + (currentPeerOrder / peersToEvaluate.length) * 20 + (1 / peersToEvaluate.length) * 10;
-            } else if (pageId === 'peerRating') {
-                progress = 60 + (currentPeerOrder / peersToEvaluate.length) * 20 + (1 / peersToEvaluate.length) * 20;
-            }
+        // 頁面切換函數
+        function showPage(pageId) {
+            document.querySelectorAll('.form-page').forEach(page => {
+                page.classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+            updateProgressBar(pageId);
         }
-        const progressBarElement = document.getElementById('progressBar');
-        if (progressBarElement) {
-            progressBarElement.style.width = `${Math.min(progress, 100)}%`;
+
+        function prevPage(pageId) {
+            showPage(pageId);
         }
-    }
 
-    // 班級選擇
-    function selectClass(element) {
-        document.querySelectorAll('#classSelection .option-card').forEach(card => card.classList.remove('selected'));
-        element.classList.add('selected');
-        formData.class = element.dataset.value;
-        document.getElementById('nextToGroup').disabled = false;
-        
-        const groupOptions = document.getElementById('groupOptions');
-        groupOptions.innerHTML = ''; 
-        formData.group = ''; 
-        document.getElementById('nextToSelfEval').disabled = true;
+        function updateProgressBar(pageId) {
+            const progressMap = {
+                'classSelection': 0,
+                'groupSelection': 25,
+                'selfSelection': 25,
+                'selfTasks': 50,
+                'selfEffort': 50,
+                'selfRating': 50,
+                'peerSelection': 75,
+                'peerTasks': 75,
+                'peerRating': 75,
+                'confirmation': 100,
+                'success': 100
+            };
+            
+            document.getElementById('progressBar').style.width = `${progressMap[pageId]}%`;
+        }
 
-        if (classGroups[formData.class]) {
-            classGroups[formData.class].forEach((groupData) => {
+        // 班級選擇
+        function selectClass(element) {
+            document.querySelectorAll('#classSelection .option-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            formData.class = element.dataset.value;
+            document.getElementById('nextToGroup').disabled = false;
+            
+            // 生成組別選項
+            const groupOptions = document.getElementById('groupOptions');
+            groupOptions.innerHTML = '';
+            
+            classGroups[formData.class].forEach((groupData, index) => {
                 const groupCard = document.createElement('div');
                 groupCard.className = 'option-card p-4 cursor-pointer';
                 groupCard.dataset.value = groupData.group;
                 groupCard.onclick = function() { selectGroup(this); };
-                groupCard.innerHTML = `<div class="flex items-center"><span class="text-indigo-600 text-2xl mr-3">👥</span><span class="font-medium">${groupData.group}</span></div>`;
+                groupCard.innerHTML = `
+                    <div class="flex items-center">
+                        <span class="text-indigo-600 text-2xl mr-3">👥</span>
+                        <span class="font-medium">${groupData.group}</span>
+                    </div>
+                `;
                 groupOptions.appendChild(groupCard);
             });
         }
-    }
 
-    // 組別選擇
-    function selectGroup(element) {
-        document.querySelectorAll('#groupSelection .option-card').forEach(card => card.classList.remove('selected'));
-        element.classList.add('selected');
-        formData.group = element.dataset.value;
-        document.getElementById('nextToSelfEval').disabled = false;
-        
-        const memberOptions = document.getElementById('memberOptions');
-        memberOptions.innerHTML = ''; 
-        formData.self = ''; 
-        document.getElementById('nextToSelfTasks').disabled = true;
-
-        const groupData = classGroups[formData.class]?.find(g => g.group === formData.group);
-        if (groupData) {
-            groupData.members.forEach(member => {
+        // 組別選擇
+        function selectGroup(element) {
+            document.querySelectorAll('#groupSelection .option-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            formData.group = element.dataset.value;
+            document.getElementById('nextToSelfEval').disabled = false;
+            
+            // 生成組員選項
+            const memberOptions = document.getElementById('memberOptions');
+            memberOptions.innerHTML = '';
+            
+            const groupIndex = classGroups[formData.class].findIndex(g => g.group === formData.group);
+            const members = classGroups[formData.class][groupIndex].members;
+            
+            members.forEach(member => {
                 const memberCard = document.createElement('div');
                 memberCard.className = 'option-card p-4 cursor-pointer';
                 memberCard.dataset.value = member;
                 memberCard.onclick = function() { selectSelf(this); };
-                memberCard.innerHTML = `<div class="flex items-center"><span class="text-indigo-600 text-2xl mr-3">👤</span><span class="font-medium">${member}</span></div>`;
+                memberCard.innerHTML = `
+                    <div class="flex items-center">
+                        <span class="text-indigo-600 text-2xl mr-3">👤</span>
+                        <span class="font-medium">${member}</span>
+                    </div>
+                `;
                 memberOptions.appendChild(memberCard);
             });
         }
-    }
 
-    // 選擇自己
-    function selectSelf(element) {
-        document.querySelectorAll('#selfSelection .option-card').forEach(card => card.classList.remove('selected'));
-        element.classList.add('selected');
-        formData.self = element.dataset.value;
-        document.getElementById('nextToSelfTasks').disabled = false;
-    }
+        // 選擇自己
+        function selectSelf(element) {
+            document.querySelectorAll('#selfSelection .option-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            formData.self = element.dataset.value;
+            document.getElementById('nextToSelfTasks').disabled = false;
+        }
 
-    // 切換複選框 (通用)
-    function toggleCheckbox(element, type) { 
-        const checkbox = element.querySelector('input[type="checkbox"]');
-        if (!checkbox) return;
-        checkbox.checked = !checkbox.checked;
-        element.classList.toggle('selected', checkbox.checked);
-        
-        if (type === 'selfTasks') {
-            formData.selfTasks = Array.from(document.querySelectorAll('#selfTasks input[type="checkbox"]:checked')).map(cb => cb.value);
-            document.getElementById('nextToSelfEffort').disabled = formData.selfTasks.length === 0;
-        } else if (type === 'selfEffort') {
-            formData.selfEffort = Array.from(document.querySelectorAll('#selfEffort input[type="checkbox"]:checked')).map(cb => cb.value);
-            document.getElementById('nextToSelfRating').disabled = formData.selfEffort.length === 0;
-        } else if (type === 'peerTasks') {
-            const peerEval = formData.peerEvals.find(p => p.peer === currentEvaluatingPeerName);
-            if (peerEval) {
-                peerEval.tasks = Array.from(document.querySelectorAll('#peerTasks input[type="checkbox"]:checked')).map(cb => cb.value);
+        // 切換複選框
+        function toggleCheckbox(element) {
+            const checkbox = element.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            element.classList.toggle('selected', checkbox.checked);
+            
+            // 更新下一步按鈕狀態
+            if (element.closest('#selfTasks')) {
+                const checkedTasks = document.querySelectorAll('#selfTasks input[type="checkbox"]:checked');
+                formData.selfTasks = Array.from(checkedTasks).map(cb => cb.value);
+            } else if (element.closest('#selfEffort')) {
+                const checkedEfforts = document.querySelectorAll('#selfEffort input[type="checkbox"]:checked');
+                formData.selfEffort = Array.from(checkedEfforts).map(cb => cb.value);
+            } else if (element.closest('#peerTasks')) {
+                const checkedPeerTasks = document.querySelectorAll('#peerTasks input[type="checkbox"]:checked');
+                const currentPeerEval = formData.peerEvals[currentPeerIndex] || {};
+                currentPeerEval.tasks = Array.from(checkedPeerTasks).map(cb => cb.value);
+                if (!formData.peerEvals[currentPeerIndex]) {
+                    formData.peerEvals[currentPeerIndex] = currentPeerEval;
+                }
             }
-            document.getElementById('nextToPeerRating').disabled = false; 
         }
-    }
-    
-    function rebindCheckboxes() {
-        document.querySelectorAll('#selfTasks .custom-checkbox').forEach(el => {
-            el.onclick = function() { toggleCheckbox(this, 'selfTasks'); };
-        });
-        document.querySelectorAll('#selfEffort .custom-checkbox').forEach(el => {
-            el.onclick = function() { toggleCheckbox(this, 'selfEffort'); };
-        });
-        document.querySelectorAll('#peerTaskCheckboxes .custom-checkbox').forEach(el => {
-            el.onclick = function() { toggleCheckbox(this, 'peerTasks'); };
-        });
-    }
-    
-    // 選擇評分
-function selectRating(element, inputIdPrefix) {
-    console.log('[selectRating] Called. inputIdPrefix:', inputIdPrefix, 'Element value:', element.dataset.value); // 新增日誌
-    const container = element.closest('.rating-container');
-    if (!container) {
-        console.error('[selectRating] Rating container not found.'); // 新增日誌
-        return;
-    }
-    container.querySelectorAll('.rating-btn').forEach(btn => btn.classList.remove('selected'));
-    element.classList.add('selected');
-    const ratingValue = element.dataset.value;
-    const ratingValueInput = document.getElementById(inputIdPrefix); // 這應該是 'selfRatingValue' 或 'peerRatingValue'
 
-    if (ratingValueInput) {
-        ratingValueInput.value = ratingValue;
-    } else {
-        console.error('[selectRating] Hidden input not found for ID:', inputIdPrefix); // 新增日誌
-    }
-
-    if (inputIdPrefix === 'selfRatingValue') { // 確保這裡的 ID 與 HTML onclick 傳入的一致
-        formData.selfRating = ratingValue;
-        console.log('[selectRating] formData.selfRating set to:', formData.selfRating); // 新增日誌
-        console.log('[selectRating] Calling checkSelfRatingComplete...'); // 新增日誌
-        checkSelfRatingComplete();
-    } else if (inputIdPrefix === 'peerRatingValue') {
-        const peerEval = formData.peerEvals.find(p => p.peer === currentEvaluatingPeerName);
-        if (peerEval) {
-            peerEval.rating = ratingValue;
-            console.log('[selectRating] Peer rating set for', currentEvaluatingPeerName, 'to:', peerEval.rating); // 新增日誌
+        // 選擇評分
+        function selectRating(element, inputId) {
+            const container = element.closest('.rating-container');
+            container.querySelectorAll('.rating-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            document.getElementById(inputId).value = element.dataset.value;
+            
+            if (inputId === 'selfRatingValue') {
+                formData.selfRating = element.dataset.value;
+                checkSelfRatingComplete();
+            } else if (inputId === 'peerRatingValue') {
+                const currentPeerEval = formData.peerEvals[currentPeerIndex] || {};
+                currentPeerEval.rating = element.dataset.value;
+                if (!formData.peerEvals[currentPeerIndex]) {
+                    formData.peerEvals[currentPeerIndex] = currentPeerEval;
+                }
+                checkPeerRatingComplete();
+            }
         }
-        console.log('[selectRating] Calling checkPeerRatingComplete for peer...'); // 新增日誌
-        checkPeerRatingComplete();
-    }
-}
 
-    // 檢查自評評分是否完成
-function checkSelfRatingComplete() {
-    console.log('[checkSelfRatingComplete] Called.'); // 新增日誌
-    const selfCommentElement = document.getElementById('selfComment');
-    if (selfCommentElement) {
-        formData.selfComment = selfCommentElement.value.trim();
-    } else {
-        console.error('[checkSelfRatingComplete] selfComment textarea not found.'); // 新增日誌
-        formData.selfComment = ''; // 避免後續出錯
-    }
+        // 檢查自評評分是否完成
+        function checkSelfRatingComplete() {
+            const selfComment = document.getElementById('selfComment').value.trim();
+            formData.selfComment = selfComment;
+            document.getElementById('nextToPeerEval').disabled = !(formData.selfRating && selfComment);
+        }
 
-    console.log('[checkSelfRatingComplete] formData.selfRating:', formData.selfRating); // 新增日誌
-    console.log('[checkSelfRatingComplete] formData.selfComment:', formData.selfComment); // 新增日誌
+        // 檢查互評評分是否完成
+        function checkPeerRatingComplete() {
+            const peerComment = document.getElementById('peerComment').value.trim();
+            const currentPeerEval = formData.peerEvals[currentPeerIndex] || {};
+            currentPeerEval.comment = peerComment;
+            if (!formData.peerEvals[currentPeerIndex]) {
+                formData.peerEvals[currentPeerIndex] = currentPeerEval;
+            }
+            document.getElementById('nextPeerEval').disabled = !(currentPeerEval.rating && peerComment);
+        }
 
-    const nextButton = document.getElementById('nextToPeerEval');
-    if (nextButton) {
-        constisDisabled = !(formData.selfRating && formData.selfComment);
-        nextButton.disabled = isDisabled;
-        console.log('[checkSelfRatingComplete] Condition (formData.selfRating && formData.selfComment):', (formData.selfRating && formData.selfComment)); // 新增日誌
-        console.log('[checkSelfRatingComplete] nextToPeerEval button disabled set to:', isDisabled); // 新增日誌
-    } else {
-        console.error('[checkSelfRatingComplete] nextToPeerEval button not found.'); // 新增日誌
-    }
-}
+        // 選擇互評組員
+        function selectPeer(element) {
+            document.querySelectorAll('#peerSelection .option-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            
+            const peerName = element.dataset.value;
+            const peerIndex = evaluatedPeers.findIndex(p => p.name === peerName);
+            
+            if (peerIndex === -1) {
+                // 新的互評
+                const newPeer = { name: peerName };
+                evaluatedPeers.push(newPeer);
+                currentPeerIndex = evaluatedPeers.length - 1;
+                
+                if (!formData.peerEvals[currentPeerIndex]) {
+                    formData.peerEvals[currentPeerIndex] = { peer: peerName };
+                } else {
+                    formData.peerEvals[currentPeerIndex].peer = peerName;
+                }
+            } else {
+                // 已評過的組員
+                currentPeerIndex = peerIndex;
+            }
+            
+            document.getElementById('nextToPeerTasks').disabled = false;
+            document.getElementById('currentPeerName').textContent = peerName;
+            document.getElementById('currentPeerNameRating').textContent = peerName;
+            
+            // 重置互評表單
+            resetPeerEvalForm();
+            
+            // 如果是已評過的組員，填入已有資料
+            if (formData.peerEvals[currentPeerIndex]) {
+                const peerEval = formData.peerEvals[currentPeerIndex];
+                
+                // 填入工作任務
+                if (peerEval.tasks && peerEval.tasks.length > 0) {
+                    document.querySelectorAll('#peerTasks input[type="checkbox"]').forEach(cb => {
+                        cb.checked = peerEval.tasks.includes(cb.value);
+                        cb.closest('.custom-checkbox').classList.toggle('selected', cb.checked);
+                    });
+                }
+                
+                // 填入其他工作任務
+                if (peerEval.otherTask) {
+                    document.getElementById('otherPeerTask').value = peerEval.otherTask;
+                }
+                
+                // 填入評分
+                if (peerEval.rating) {
+                    document.querySelectorAll('#peerRating .rating-btn').forEach(btn => {
+                        if (btn.dataset.value === peerEval.rating) {
+                            btn.classList.add('selected');
+                        }
+                    });
+                    document.getElementById('peerRatingValue').value = peerEval.rating;
+                }
+                
+                // 填入評價理由
+                if (peerEval.comment) {
+                    document.getElementById('peerComment').value = peerEval.comment;
+                }
+            }
+        }
 
-    // 檢查互評評分是否完成
-    function checkPeerRatingComplete() {
-        const peerEval = formData.peerEvals.find(p => p.peer === currentEvaluatingPeerName);
-        if (peerEval) {
-            peerEval.comment = document.getElementById('peerComment').value.trim();
-            document.getElementById('nextPeerEval').disabled = !(peerEval.rating && peerEval.comment);
-        } else {
+        // 重置互評表單
+        function resetPeerEvalForm() {
+            // 重置工作任務
+            document.querySelectorAll('#peerTasks input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.custom-checkbox').classList.remove('selected');
+            });
+            document.getElementById('otherPeerTask').value = '';
+            
+            // 重置評分
+            document.querySelectorAll('#peerRating .rating-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            document.getElementById('peerRatingValue').value = '';
+            
+            // 重置評價理由
+            document.getElementById('peerComment').value = '';
+            
+            // 重置下一步按鈕
             document.getElementById('nextPeerEval').disabled = true;
         }
-    }
 
-    // 初始化互評相關變數
-    function initializePeerEvaluation() {
-        const groupData = classGroups[formData.class]?.find(g => g.group === formData.group);
-        if (!groupData) return;
-        peersToEvaluate = groupData.members.filter(member => member !== formData.self);
-        formData.peerEvals = []; 
-        updatePeerOptionsDisplay(); 
-        updatePeerEvalCountDisplay();
-    }
-    
-    function updatePeerOptionsDisplay() {
-        const peerOptionsContainer = document.getElementById('peerOptions');
-        if(!peerOptionsContainer) return;
-        peerOptionsContainer.innerHTML = ''; 
-
-        peersToEvaluate.forEach(peerName => {
-            const peerEvalData = formData.peerEvals.find(p => p.peer === peerName);
-            const isEvaluated = peerEvalData && peerEvalData.rating && peerEvalData.comment;
-
-            const peerCard = document.createElement('div');
-            peerCard.className = `option-card p-4 cursor-pointer ${isEvaluated ? 'evaluated' : ''} ${currentEvaluatingPeerName === peerName && !isEvaluated ? 'selected' : ''}`;
-            peerCard.dataset.value = peerName;
-            peerCard.onclick = function() { selectPeerToEvaluate(this); };
+        // 更新互評計數
+        function updatePeerEvalCount() {
+            const count = evaluatedPeers.length;
+            document.getElementById('peerEvalCount').textContent = count;
             
-            let statusText = isEvaluated ? '<span class="text-green-500 text-sm ml-2">（已評完）</span>' : '';
-            
-            peerCard.innerHTML = `
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                       <span class="text-indigo-600 text-2xl mr-3">👤</span>
-                       <span class="font-medium">${peerName}</span>
-                    </div>
-                    ${statusText}
-                </div>`;
-            peerOptionsContainer.appendChild(peerCard);
-        });
-
-        const nextButton = document.getElementById('nextToPeerTasks');
-        if (!nextButton) return;
-
-        const allPeersEvaluated = formData.peerEvals.length === peersToEvaluate.length && peersToEvaluate.length > 0 && formData.peerEvals.every(p => p.rating && p.comment);
-        if (allPeersEvaluated) {
-            nextButton.textContent = "完成互評，查看摘要"; 
-            nextButton.disabled = false; 
-            nextButton.onclick = function() { 
+            // 如果已評4位組員，自動進入確認頁面
+            if (count >= 4) {
                 prepareSummary();
                 showPage('confirmation');
-            };
-        } else if (currentEvaluatingPeerName) {
-            const currentPeerData = formData.peerEvals.find(p => p.peer === currentEvaluatingPeerName);
-            nextButton.textContent = (currentPeerData && currentPeerData.rating && currentPeerData.comment) ? "查看/修改此組員評價" : "開始評價此組員";
-            nextButton.disabled = false;
-            nextButton.onclick = function() { loadPeerTasksPageFor(currentEvaluatingPeerName); };
-        } else {
-            nextButton.textContent = "選擇組員後進行下一步";
-            nextButton.disabled = true; 
-            nextButton.onclick = function() { if(currentEvaluatingPeerName) loadPeerTasksPageFor(currentEvaluatingPeerName); };
+            } else {
+                // 更新互評組員選項
+                updatePeerOptions();
+                showPage('peerSelection');
+            }
         }
-    }
 
-    function selectPeerToEvaluate(element) {
-        currentEvaluatingPeerName = element.dataset.value; 
-        updatePeerOptionsDisplay(); // Just re-run to update selection and button state
-    }
-    
-    function loadPeerTasksPageFor(peerName) {
-        if (!peerName) return;
-        currentEvaluatingPeerName = peerName; 
-        const currentPeerNameSpan = document.getElementById('currentPeerName');
-        const currentPeerNameRatingSpan = document.getElementById('currentPeerNameRating');
-        if (currentPeerNameSpan) currentPeerNameSpan.textContent = peerName;
-        if (currentPeerNameRatingSpan) currentPeerNameRatingSpan.textContent = peerName;
-
-        let peerEval = formData.peerEvals.find(p => p.peer === peerName);
-        if (!peerEval) {
-            peerEval = { peer: peerName, tasks: [], otherTask: '', rating: '', comment: '' };
-            formData.peerEvals.push(peerEval);
-        }
-        resetAndFillPeerForm(peerEval);
-        showPage('peerTasks');
-    }
-
-    function resetAndFillPeerForm(peerEvalData) {
-        document.querySelectorAll('#peerTaskCheckboxes input[type="checkbox"]').forEach(cb => {
-            cb.checked = false;
-            cb.closest('.custom-checkbox')?.classList.remove('selected');
-        });
-        const otherPeerTaskInput = document.getElementById('otherPeerTask');
-        if (otherPeerTaskInput) otherPeerTaskInput.value = '';
-        
-        document.querySelectorAll('#peerRating .rating-btn').forEach(btn => btn.classList.remove('selected'));
-        const peerRatingValueInput = document.getElementById('peerRatingValue');
-        if (peerRatingValueInput) peerRatingValueInput.value = '';
-        const peerCommentTextarea = document.getElementById('peerComment');
-        if (peerCommentTextarea) peerCommentTextarea.value = '';
-        const nextPeerEvalButton = document.getElementById('nextPeerEval');
-        if (nextPeerEvalButton) nextPeerEvalButton.disabled = true; 
-
-        if (peerEvalData) {
-            if (peerEvalData.tasks && peerEvalData.tasks.length > 0) {
-                document.querySelectorAll('#peerTaskCheckboxes input[type="checkbox"]').forEach(cb => {
-                    if (peerEvalData.tasks.includes(cb.value)) {
-                        cb.checked = true;
-                        cb.closest('.custom-checkbox')?.classList.add('selected');
+        // 更新互評組員選項
+        function updatePeerOptions() {
+            const peerOptions = document.getElementById('peerOptions');
+            peerOptions.innerHTML = '';
+            
+            const groupIndex = classGroups[formData.class].findIndex(g => g.group === formData.group);
+            const members = classGroups[formData.class][groupIndex].members;
+            
+            members.forEach(member => {
+                if (member !== formData.self) {  // 排除自己
+                    const isEvaluated = evaluatedPeers.some(p => p.name === member);
+                    const memberCard = document.createElement('div');
+                    memberCard.className = `option-card p-4 cursor-pointer ${isEvaluated ? 'evaluated' : ''}`;
+                    memberCard.dataset.value = member;
+                    memberCard.onclick = function() { selectPeer(this); };
+                    
+                    let statusText = '';
+                    if (isEvaluated) {
+                        statusText = '<span class="text-green-500 text-sm ml-2">（已評分）</span>';
                     }
-                });
-            }
-            if (otherPeerTaskInput) otherPeerTaskInput.value = peerEvalData.otherTask || '';
-            if (peerEvalData.rating) {
-                document.querySelector(`#peerRating .rating-btn[data-value="${peerEvalData.rating}"]`)?.classList.add('selected');
-                if (peerRatingValueInput) peerRatingValueInput.value = peerEvalData.rating;
-            }
-            if (peerCommentTextarea) peerCommentTextarea.value = peerEvalData.comment || '';
-            checkPeerRatingComplete(); 
+                    
+                    memberCard.innerHTML = `
+                        <div class="flex items-center">
+                            <span class="text-indigo-600 text-2xl mr-3">👤</span>
+                            <span class="font-medium">${member}${statusText}</span>
+                        </div>
+                    `;
+                    peerOptions.appendChild(memberCard);
+                }
+            });
         }
-        const nextToPeerRatingButton = document.getElementById('nextToPeerRating');
-        if (nextToPeerRatingButton) nextToPeerRatingButton.disabled = false;
-        rebindCheckboxes(); // Rebind after potential DOM changes for peer tasks
-    }
-    
-    function updatePeerEvalCountDisplay() {
-        const peerEvalCountSpan = document.getElementById('peerEvalCount');
-        if (!peerEvalCountSpan) return;
-        const evaluatedCount = formData.peerEvals.filter(p => p.rating && p.comment).length;
-        const totalPeersToEvaluate = peersToEvaluate.length;
-        peerEvalCountSpan.textContent = `${evaluatedCount}/${totalPeersToEvaluate}`;
-    }
 
-    function handleNextPeerOrConfirmation() {
-        updatePeerEvalCountDisplay(); 
-        updatePeerOptionsDisplay(); 
-
-        const allPeersEvaluated = formData.peerEvals.length === peersToEvaluate.length && peersToEvaluate.length > 0 && formData.peerEvals.every(p => p.rating && p.comment);
-
-        if (allPeersEvaluated) {
-            prepareSummary();
-            showPage('confirmation');
-        } else {
-            let nextPeerToEvaluate = peersToEvaluate.find(pName => !formData.peerEvals.find(ev => ev.peer === pName && ev.rating && ev.comment));
-            currentEvaluatingPeerName = nextPeerToEvaluate || ''; // Go to selection if no specific next one or clear
-            showPage('peerSelection'); 
-        }
-    }
-
-    // 準備摘要頁面
-    function prepareSummary() {
-        document.getElementById('summaryClass').textContent = formData.class + '班';
-        document.getElementById('summaryGroup').textContent = formData.group;
-        document.getElementById('summarySelf').textContent = formData.self;
-        document.getElementById('summarySelfTasks').textContent = formData.selfTasks.join(', ') || '無';
-        document.getElementById('summaryOtherSelfTask').textContent = formData.otherSelfTask || '無';
-        document.getElementById('summarySelfEffort').textContent = formData.selfEffort.join(', ') || '無';
-        document.getElementById('summaryOtherSelfEffort').textContent = formData.otherSelfEffort || '無';
-        document.getElementById('summarySelfRating').textContent = formData.selfRating;
-        document.getElementById('summarySelfComment').textContent = formData.selfComment;
-        
-        const peerEvalSummaryContainer = document.getElementById('peerEvalSummary');
-        peerEvalSummaryContainer.innerHTML = '';
-        
-        formData.peerEvals.forEach((peerEval) => {
-            if (peerEval.peer && peerEval.rating && peerEval.comment) {
+        // 準備摘要頁面
+        function prepareSummary() {
+            // 基本資料
+            document.getElementById('summaryClass').textContent = formData.class + '班';
+            document.getElementById('summaryGroup').textContent = formData.group;
+            document.getElementById('summarySelf').textContent = formData.self;
+            
+            // 自評摘要
+            document.getElementById('summarySelfTasks').textContent = formData.selfTasks.join(', ') || '無';
+            document.getElementById('summaryOtherSelfTask').textContent = formData.otherSelfTask || '無';
+            document.getElementById('summarySelfEffort').textContent = formData.selfEffort.join(', ') || '無';
+            document.getElementById('summaryOtherSelfEffort').textContent = formData.otherSelfEffort || '無';
+            document.getElementById('summarySelfRating').textContent = formData.selfRating;
+            document.getElementById('summarySelfComment').textContent = formData.selfComment;
+            
+            // 互評摘要
+            const peerEvalSummary = document.getElementById('peerEvalSummary');
+            peerEvalSummary.innerHTML = '';
+            
+            formData.peerEvals.forEach((peerEval, index) => {
                 const peerSummary = document.createElement('div');
                 peerSummary.className = 'bg-gray-50 p-4 rounded-lg mb-4';
-                const peerIndexForDisplay = peersToEvaluate.indexOf(peerEval.peer) + 1;
                 peerSummary.innerHTML = `
-                    <h4 class="font-medium text-indigo-600 mb-2">互評 ${peerIndexForDisplay > 0 ? peerIndexForDisplay : '特定'} : ${peerEval.peer}</h4>
-                    <p><span class="font-medium">觀察到的工作任務：</span>${peerEval.tasks ? peerEval.tasks.join(', ') : '未記錄'}</p>
-                    <p class="mt-1"><span class="font-medium">其他觀察到的工作任務：</span>${peerEval.otherTask || '無'}</p>
+                    <h4 class="font-medium text-indigo-600 mb-2">互評 ${index + 1}: ${peerEval.peer}</h4>
+                    <p><span class="font-medium">工作任務：</span>${peerEval.tasks ? peerEval.tasks.join(', ') : '無'}</p>
+                    <p class="mt-1"><span class="font-medium">其他工作任務：</span>${peerEval.otherTask || '無'}</p>
                     <p class="mt-1"><span class="font-medium">評分：</span>${peerEval.rating}</p>
                     <p class="mt-1"><span class="font-medium">評價理由：</span></p>
-                    <p class="text-gray-600 mt-1">${peerEval.comment}</p>`;
-                peerEvalSummaryContainer.appendChild(peerSummary);
+                    <p class="text-gray-600 mt-1">${peerEval.comment}</p>
+                `;
+                peerEvalSummary.appendChild(peerSummary);
+            });
+        }
+
+        // 返回開始頁面
+        function returnToStart() {
+            showPage('classSelection');
+        }
+
+        // 提交表單到Google試算表
+        async function submitToGoogleSheet() {
+            // 顯示載入中遮罩
+            document.getElementById('loadingOverlay').classList.remove('hidden');
+            
+            // 添加時間戳
+            formData.timestamp = new Date().toISOString();
+            
+            try {
+                // 將表單資料轉換為適合提交的格式
+                const formattedData = formatDataForSubmission(formData);
+                
+                // 使用更新後的Google Apps Script Web App URL
+                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                // !! 重要：請務必將下面的 YOUR_NEW_SCRIPT_URL_HERE 替換成您自己的 Apps Script 網址 !!
+                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxOpWCRKyVjWdeJ51ooLGVO1GlUnj4r4urAXWZujAfbQKwBDCcxHNMl_hW6dkmqiRGq/exec'; 
+                
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', // 指定內容類型為 JSON
+                    },
+                    mode: 'cors', //  確保可以跨域請求
+                    body: JSON.stringify(formattedData),
+                });
+                
+                if (response.ok) {
+                    const responseData = await response.json(); // 解析Apps Script回傳的JSON
+                    console.log('提交成功:', responseData);
+                    // 隱藏載入中遮罩
+                    document.getElementById('loadingOverlay').classList.add('hidden');
+                    formSubmitted = true;
+                    showPage('success');
+                } else {
+                    const errorData = await response.text(); // 如果不是JSON，獲取文字錯誤訊息
+                    console.error('提交回應非OK:', response.status, errorData);
+                    throw new Error('提交失敗，狀態碼：' + response.status + '，訊息：' + errorData);
+                }
+            } catch (error) {
+                console.error('提交錯誤:', error);
+                // 隱藏載入中遮罩
+                document.getElementById('loadingOverlay').classList.add('hidden');
+                alert('提交失敗，請檢查控制台(Console)的錯誤訊息，並確認Apps Script已正確部署且允許任何人存取。錯誤訊息：' + error.message);
             }
-        });
-    }
-
-    // 返回開始頁面 (重置表單)
-    function returnToStart() {
-        formData = {
-            class: '', group: '', self: '', selfTasks: [], otherSelfTask: '',
-            selfEffort: [], otherSelfEffort: '', selfRating: '', selfComment: '',
-            peerEvals: [], timestamp: ''
-        };
-        peersToEvaluate = []; currentEvaluatingPeerName = ''; formSubmitted = false;
-
-        document.querySelectorAll('input[type="text"], textarea').forEach(input => input.value = '');
-        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-            cb.checked = false;
-            cb.closest('.custom-checkbox')?.classList.remove('selected');
-        });
-        document.querySelectorAll('.option-card.selected').forEach(card => card.classList.remove('selected'));
-        document.querySelectorAll('.rating-btn.selected').forEach(btn => btn.classList.remove('selected'));
-        
-        ['nextToGroup', 'nextToSelfEval', 'nextToSelfTasks', 'nextToSelfEffort', 
-         'nextToSelfRating', 'nextToPeerEval', 'nextToPeerTasks', 'nextPeerEval']
-        .forEach(id => {
-            const button = document.getElementById(id);
-            if (button) button.disabled = true;
-        });
-        showPage('classSelection');
-    }
-
-    // 提交表單到Google試算表
-    async function submitToGoogleSheet() {
-        if (formSubmitted) {
-            alert('表單已提交，請勿重複提交。');
-            return;
-        }
-        const loadingOverlay = document.getElementById('loadingOverlay');
-        if (loadingOverlay) loadingOverlay.classList.remove('hidden');
-        
-        formData.timestamp = new Date().toISOString();
-        
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxY158J77F4HeduN_lHKyTllJU9ySIAWU_cBscsumrOe52fC7pEno9_KghPesqjhGM8/exec'; // !!! 請務必替換成您自己的 !!!
-
-        if (scriptURL === 'https://script.google.com/macros/s/AKfycbxY158J77F4HeduN_lHKyTllJU9ySIAWU_cBscsumrOe52fC7pEno9_KghPesqjhGM8/exec' || scriptURL.includes('AKfycbxY158J77F4HeduN_lHKyTllJU9ySIAWU_cBscsumrOe52fC7pEno9_KghPesqjhGM8') && scriptURL !== 'YOUR_REAL_URL_IF_TESTING') {
-             if (loadingOverlay) loadingOverlay.classList.add('hidden');
-             alert('錯誤：請先在HTML程式碼中設定您自己的Google Apps Script Web App URL (scriptURL變數)。');
-             return;
         }
 
-        try {
-            const formattedData = formatDataForSubmission(formData);
-            const response = await fetch(scriptURL, {
-                method: 'POST',
-                mode: 'no-cors', 
-                headers: {
-                     // 'Content-Type': 'application/json' // For 'no-cors', this header might be ignored or cause issues.
-                                                            // Apps Script doPost by default can handle application/x-www-form-urlencoded if 'e.parameter' is used.
-                                                            // For 'e.postData.contents' to work with JSON, the server (Apps Script) needs to handle it,
-                                                            // and 'no-cors' can make this tricky.
-                                                            // Let's try without explicitly setting Content-Type for 'no-cors' first if JSON parsing fails.
-                                                            // Or, keep it and hope GAS is lenient with no-cors + application/json
-                    'Content-Type': 'application/json', // Keeping for now based on previous attempts
-                },
-                body: JSON.stringify(formattedData), // <-- 修正：補回 body
+        // 格式化資料以便提交
+        function formatDataForSubmission(data) {
+            // 基本資料
+            const baseData = {
+                timestamp: data.timestamp,
+                class: data.class,
+                group: data.group,
+                self: data.self,
+                selfTasks: data.selfTasks.join(', '),
+                otherSelfTask: data.otherSelfTask,
+                selfEffort: data.selfEffort.join(', '),
+                otherSelfEffort: data.otherSelfEffort,
+                selfRating: data.selfRating,
+                selfComment: data.selfComment
+            };
+            
+            // 互評資料
+            data.peerEvals.forEach((peerEval, index) => {
+                baseData[`peer${index+1}`] = peerEval.peer;
+                baseData[`peer${index+1}Tasks`] = peerEval.tasks ? peerEval.tasks.join(', ') : '';
+                baseData[`peer${index+1}OtherTask`] = peerEval.otherTask || '';
+                baseData[`peer${index+1}Rating`] = peerEval.rating;
+                baseData[`peer${index+1}Comment`] = peerEval.comment;
             });
             
-            // With 'no-cors', response.ok will be false, response.status will be 0.
-            // We can't reliably check for success from the response here.
-            // Assume success if no error is thrown by fetch itself, and check Google Sheet.
-            if (loadingOverlay) loadingOverlay.classList.add('hidden');
-            formSubmitted = true; // Optimistically set to true
-            showPage('success');
-            // alert('評價已嘗試提交！請檢查您的 Google 試算表確認資料是否已寫入。由於瀏覽器限制，無法直接確認提交狀態。');
-
-        } catch (error) {
-            console.error('提交錯誤:', error);
-            if (loadingOverlay) loadingOverlay.classList.add('hidden');
-            alert(`提交失敗，請檢查網路連線或稍後再試。\n錯誤詳情：${error.message}`);
+            // 確保所有預期的 peer 欄位都存在，即使沒有那麼多筆互評
+            for (let i = 1; i <= 4; i++) {
+                if (!baseData[`peer${i}`]) baseData[`peer${i}`] = "";
+                if (!baseData[`peer${i}Tasks`]) baseData[`peer${i}Tasks`] = "";
+                if (!baseData[`peer${i}OtherTask`]) baseData[`peer${i}OtherTask`] = "";
+                if (!baseData[`peer${i}Rating`]) baseData[`peer${i}Rating`] = "";
+                if (!baseData[`peer${i}Comment`]) baseData[`peer${i}Comment`] = "";
+            }
+            return baseData;
         }
-    }
 
-    // 格式化資料以便提交
-    function formatDataForSubmission(data) {
-        const baseData = {
-            timestamp: data.timestamp, class: data.class, group: data.group, self: data.self,
-            selfTasks: data.selfTasks.join(', '), otherSelfTask: data.otherSelfTask,
-            selfEffort: data.selfEffort.join(', '), otherSelfEffort: data.otherSelfEffort,
-            selfRating: data.selfRating, selfComment: data.selfComment
-        };
-        peersToEvaluate.forEach((peerNameToEval, index) => {
-            const evalData = data.peerEvals.find(p => p.peer === peerNameToEval);
-            const i = index + 1; 
-            if (evalData) {
-                baseData[`peer${i}`] = evalData.peer;
-                baseData[`peer${i}Tasks`] = evalData.tasks ? evalData.tasks.join(', ') : '';
-                baseData[`peer${i}OtherTask`] = evalData.otherTask || '';
-                baseData[`peer${i}Rating`] = evalData.rating;
-                baseData[`peer${i}Comment`] = evalData.comment;
-            } else {
-                baseData[`peer${i}`] = peerNameToEval; 
-                baseData[`peer${i}Tasks`] = ''; baseData[`peer${i}OtherTask`] = '';
-                baseData[`peer${i}Rating`] = ''; baseData[`peer${i}Comment`] = '';
-            }
-        });
-        return baseData;
-    }
-
-    // 截圖功能 (您的原始碼中沒有，但之前討論過，如果需要可以從之前的版本複製過來)
-    // async function takeScreenshot() { ... }
-
-
-    // 頁面載入時初始化
-    document.addEventListener('DOMContentLoaded', function() {
-        rebindCheckboxes(); // Bind all checkbox handlers initially
-        showPage('classSelection'); // Initial page
-
-        const selfCommentTextarea = document.getElementById('selfComment');
-if (selfCommentTextarea) {
-    selfCommentTextarea.addEventListener('input', function() { // 將 checkSelfRatingComplete 直接包裝以增加日誌
-        console.log('[selfComment input event] Input detected, calling checkSelfRatingComplete...'); // 新增日誌
-        checkSelfRatingComplete();
-    });
-} else {
-    console.error('[DOMContentLoaded] selfComment textarea not found for event listener setup.'); // 新增日誌
-}
-
-        document.getElementById('nextToGroup').addEventListener('click', function() { if (formData.class) showPage('groupSelection'); });
-        document.getElementById('nextToSelfEval').addEventListener('click', function() { if (formData.group) showPage('selfSelection'); });
-        document.getElementById('nextToSelfTasks').addEventListener('click', function() { 
-            if (formData.self) {
-                ['selfTasks', 'selfEffort'].forEach(type => {
-                    document.querySelectorAll(`#${type} input[type="checkbox"]`).forEach(cb => {
-                        cb.checked = false;
-                        cb.closest('.custom-checkbox')?.classList.remove('selected');
-                    });
-                    formData[type] = [];
-                });
-                document.getElementById('otherSelfTask').value = '';
-                document.getElementById('otherSelfEffort').value = '';
-                document.getElementById('nextToSelfEffort').disabled = true;
-                document.getElementById('nextToSelfRating').disabled = true;
+        // 頁面載入時初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 班級選擇下一步
+            document.getElementById('nextToGroup').addEventListener('click', function() {
+                showPage('groupSelection');
+            });
+            
+            // 組別選擇下一步
+            document.getElementById('nextToSelfEval').addEventListener('click', function() {
+                showPage('selfSelection');
+            });
+            
+            // 自己選擇下一步
+            document.getElementById('nextToSelfTasks').addEventListener('click', function() {
                 showPage('selfTasks');
-            }
-        });
-        document.getElementById('nextToSelfEffort').addEventListener('click', function() {
-            formData.otherSelfTask = document.getElementById('otherSelfTask').value.trim();
-            if (formData.selfTasks.length > 0) showPage('selfEffort');
-            else alert('請至少選擇一項您負責的工作任務。');
-        });
-        document.getElementById('nextToSelfRating').addEventListener('click', function() {
-            formData.otherSelfEffort = document.getElementById('otherSelfEffort').value.trim();
-            if (formData.selfEffort.length > 0) {
-                document.querySelectorAll('#selfRating .rating-btn.selected').forEach(btn => btn.classList.remove('selected'));
-                document.getElementById('selfRatingValue').value = ''; formData.selfRating = '';
-                document.getElementById('selfComment').value = ''; formData.selfComment = '';
-                document.getElementById('nextToPeerEval').disabled = true;
-                showPage('selfRating');
-            } else alert('請至少選擇一項描述您的投入程度。');
-        });
-        document.getElementById('selfComment').addEventListener('input', checkSelfRatingComplete);
-        document.getElementById('nextToPeerEval').addEventListener('click', function() {
-            if (formData.selfRating && formData.selfComment) {
-                initializePeerEvaluation(); 
+            });
+            
+            // 自評工作任務下一步
+            document.getElementById('nextToSelfEffort').addEventListener('click', function() {
+                formData.otherSelfTask = document.getElementById('otherSelfTask').value;
+                // 檢查至少選擇一個任務，或填寫了其他任務
+                const checkedTasks = document.querySelectorAll('#selfTasks input[type="checkbox"]:checked').length;
+                if (checkedTasks > 0 || formData.otherSelfTask.trim() !== '') {
+                    showPage('selfEffort');
+                } else {
+                    alert('請至少選擇一項工作任務或填寫其他工作任務。');
+                }
+            });
+            
+            // 自評投入程度下一步
+            document.getElementById('nextToSelfRating').addEventListener('click', function() {
+                formData.otherSelfEffort = document.getElementById('otherSelfEffort').value;
+                // 檢查至少選擇一個投入程度，或填寫了其他描述
+                const checkedEfforts = document.querySelectorAll('#selfEffort input[type="checkbox"]:checked').length;
+                 if (checkedEfforts > 0 || formData.otherSelfEffort.trim() !== '') {
+                    showPage('selfRating');
+                } else {
+                    alert('請至少選擇一項投入程度或填寫其他投入程度描述。');
+                }
+            });
+            
+            // 自評評分下一步
+            document.getElementById('nextToPeerEval').addEventListener('click', function() {
+                // 初始化互評組員選項
+                updatePeerOptions();
                 showPage('peerSelection');
-            } else alert('請完成自評分數和自我評價。');
+            });
+            
+            // 監聽自評評分文字輸入
+            document.getElementById('selfComment').addEventListener('input', checkSelfRatingComplete);
+            
+            // 互評組員選擇下一步
+            document.getElementById('nextToPeerTasks').addEventListener('click', function() {
+                showPage('peerTasks');
+            });
+            
+            // 互評工作任務下一步
+            document.getElementById('nextToPeerRating').addEventListener('click', function() {
+                const currentPeerEval = formData.peerEvals[currentPeerIndex] || {};
+                currentPeerEval.otherTask = document.getElementById('otherPeerTask').value;
+                if (!formData.peerEvals[currentPeerIndex]) {
+                    formData.peerEvals[currentPeerIndex] = currentPeerEval;
+                }
+
+                // 檢查至少選擇一個任務，或填寫了其他任務 (針對互評)
+                const checkedPeerTasks = document.querySelectorAll('#peerTasks input[type="checkbox"]:checked').length;
+                if (checkedPeerTasks > 0 || (currentPeerEval.otherTask && currentPeerEval.otherTask.trim() !== '')) {
+                     showPage('peerRating');
+                } else {
+                    alert('請至少選擇一項該組員負責的工作任務或填寫其他工作任務。');
+                }
+            });
+            
+            // 監聽互評評分文字輸入
+            document.getElementById('peerComment').addEventListener('input', checkPeerRatingComplete);
+            
+            // 互評評分下一步
+            document.getElementById('nextPeerEval').addEventListener('click', function() {
+                updatePeerEvalCount();
+            });
+            
+            // 提交表單
+            document.getElementById('submitForm').addEventListener('click', function() {
+                if (formSubmitted) {
+                     alert('表單已提交，請勿重複提交。');
+                     return;
+                }
+                submitToGoogleSheet();
+            });
+
+            // 在 "下一步" 按鈕上加上檢查，避免未選擇就跳轉
+            // 自評工作任務頁面：下一步按鈕初始應為 disabled，有選擇才 enabled
+            document.getElementById('nextToSelfEffort').disabled = true;
+            document.querySelectorAll('#selfTasks input[type="checkbox"], #otherSelfTask').forEach(el => {
+                el.addEventListener('input', () => {
+                    const checked = document.querySelectorAll('#selfTasks input[type="checkbox"]:checked').length > 0;
+                    const otherFilled = document.getElementById('otherSelfTask').value.trim() !== '';
+                    document.getElementById('nextToSelfEffort').disabled = !(checked || otherFilled);
+                });
+            });
+             // 自評投入程度頁面：下一步按鈕初始應為 disabled，有選擇才 enabled
+            document.getElementById('nextToSelfRating').disabled = true; // 這裡修正，應是 nextToSelfRating
+            document.querySelectorAll('#selfEffort input[type="checkbox"], #otherSelfEffort').forEach(el => {
+                el.addEventListener('input', () => {
+                    const checked = document.querySelectorAll('#selfEffort input[type="checkbox"]:checked').length > 0;
+                    const otherFilled = document.getElementById('otherSelfEffort').value.trim() !== '';
+                    document.getElementById('nextToSelfRating').disabled = !(checked || otherFilled);
+                });
+            });
+            // 互評工作任務頁面：下一步按鈕初始應為 disabled，有選擇才 enabled
+            document.getElementById('nextToPeerRating').disabled = true;
+             document.querySelectorAll('#peerTasks input[type="checkbox"], #otherPeerTask').forEach(el => {
+                el.addEventListener('input', () => {
+                    const checked = document.querySelectorAll('#peerTasks input[type="checkbox"]:checked').length > 0;
+                    const otherFilled = document.getElementById('otherPeerTask').value.trim() !== '';
+                    document.getElementById('nextToPeerRating').disabled = !(checked || otherFilled);
+                });
+            });
         });
-        document.getElementById('nextToPeerTasks').addEventListener('click', function() {
-            const allPeersEvaluated = formData.peerEvals.length === peersToEvaluate.length && peersToEvaluate.length > 0 && formData.peerEvals.every(p => p.rating && p.comment);
-            if (currentEvaluatingPeerName && !allPeersEvaluated) { 
-                loadPeerTasksPageFor(currentEvaluatingPeerName);
-            } else if (allPeersEvaluated) {
-                prepareSummary();
-                showPage('confirmation');
-            } else {
-                alert('請先選擇一位您要評價的組員。');
-            }
-        });
-        document.getElementById('nextToPeerRating').addEventListener('click', function() {
-            const peerEval = formData.peerEvals.find(p => p.peer === currentEvaluatingPeerName);
-            if (peerEval) peerEval.otherTask = document.getElementById('otherPeerTask').value.trim();
-            if(peerEval && !peerEval.rating) { 
-                document.querySelectorAll('#peerRating .rating-btn.selected').forEach(btn => btn.classList.remove('selected'));
-                document.getElementById('peerRatingValue').value = '';
-            }
-            if(peerEval && !peerEval.comment) document.getElementById('peerComment').value = '';
-            document.getElementById('nextPeerEval').disabled = !(peerEval && peerEval.rating && peerEval.comment);
-            showPage('peerRating');
-        });
-        document.getElementById('peerComment').addEventListener('input', checkPeerRatingComplete);
-        document.getElementById('nextPeerEval').addEventListener('click', function() {
-            const peerEval = formData.peerEvals.find(p => p.peer === currentEvaluatingPeerName);
-            if (peerEval && peerEval.rating && peerEval.comment) handleNextPeerOrConfirmation();
-            else alert('請為這位組員選擇評分並填寫評價理由。');
-        });
-        document.getElementById('submitForm').addEventListener('click', function() { submitToGoogleSheet(); });
-        
-        // 如果您的 HTML 裡有 takeScreenshot 按鈕，記得加上監聽器
-        // const takeScreenshotButton = document.getElementById('takeScreenshot');
-        // if (takeScreenshotButton) {
-        //     takeScreenshotButton.addEventListener('click', takeScreenshot);
-        // }
-    });
-</script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'945cc1cbe27c8448',t:'MTc0ODI1NzEwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    </script>
+</body>
 </html>
