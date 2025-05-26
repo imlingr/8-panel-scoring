@@ -1025,11 +1025,17 @@
                 
                 const response = await fetch(scriptURL, {
                     method: 'POST',
-                    mode: 'cors',
+                    mode: 'no-cors', // <--- 修改為 'no-cors'
                     headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formattedData),
+                        // 當 mode 為 'no-cors' 時，瀏覽器可能限制你能設定的 headers。
+                        // 'Content-Type': 'application/json' 可能無法在 'no-cors' 模式下被伺服器正確識別。
+                        // 為了讓 Apps Script 預設的 e.parameter 或 e.postData.contents 能運作，
+                        // 我們通常會讓瀏覽器發送 application/x-www-form-urlencoded。
+                        // 但您目前的 Apps Script 是為 JSON 設計的。
+                        // 讓我們暫時保留 Content-Type，看看 Apps Script 是否仍能處理。
+                        // 如果不行，下一步可能需要調整 Apps Script 來處理 URL 編碼的數據，
+                        // 或是在伺服器端設定 CORS header (較複雜)。
+                        'Content-Type': 'application/json', // 暫時保留，但要知道 'no-cors' 可能會影響它
                 });
                 
                 if (response.ok) {
