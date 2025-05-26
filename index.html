@@ -152,7 +152,6 @@
             100% { transform: rotate(360deg); }
         }
     </style>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body class="py-8 px-4">
     <div class="form-container p-6 md:p-8">
@@ -590,9 +589,6 @@
                     </svg>
                     <h2 class="mt-4 text-2xl font-bold text-gray-900">提交成功！</h2>
                     <p class="mt-2 text-gray-600">感謝您完成自評與互評表單。</p>
-                    <button id="takeScreenshot" class="mt-6 btn-primary px-6 py-2 rounded-lg font-medium">
-                        全頁截圖傳給老師
-                    </button>
                 </div>
             </div>
         </div>
@@ -1079,46 +1075,6 @@
             return baseData;
         }
 
-        // 截圖功能
-        async function takeScreenshot() {
-            // 顯示載入中遮罩
-            document.getElementById('loadingOverlay').classList.remove('hidden');
-            document.getElementById('loadingOverlay').querySelector('p').textContent = '正在生成截圖，請稍候...';
-            
-            try {
-                // 返回到摘要頁面以便截圖
-                showPage('confirmation');
-                
-                // 等待DOM更新
-                await new Promise(resolve => setTimeout(resolve, 500));
-                
-                // 使用html2canvas截取整個頁面
-                const canvas = await html2canvas(document.querySelector('.form-container'));
-                
-                // 將canvas轉換為圖片
-                const image = canvas.toDataURL('image/png');
-                
-                // 創建下載連結
-                const link = document.createElement('a');
-                link.href = image;
-                link.download = `${formData.class}班_${formData.group}_${formData.self}_自評互評表.png`;
-                
-                // 模擬點擊下載
-                link.click();
-                
-                // 隱藏載入中遮罩
-                document.getElementById('loadingOverlay').classList.add('hidden');
-                
-                // 打開pCloud上傳頁面
-                window.open('https://u.pcloud.com/#page=puplink&code=zTLXZRj08u0M2eDFIbRKrAJjmd8hwOzvy', '_blank');
-                
-            } catch (error) {
-                console.error('截圖錯誤:', error);
-                document.getElementById('loadingOverlay').classList.add('hidden');
-                alert('截圖生成失敗，請稍後再試。');
-            }
-        }
-
         // 頁面載入時初始化
         document.addEventListener('DOMContentLoaded', function() {
             // 班級選擇下一步
@@ -1185,12 +1141,7 @@
             document.getElementById('submitForm').addEventListener('click', function() {
                 submitToGoogleSheet();
             });
-            
-            // 截圖按鈕
-            document.getElementById('takeScreenshot').addEventListener('click', function() {
-                takeScreenshot();
-            });
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'945c03d7d3d24a67',t:'MTc0ODI0OTMyMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'945cc1cbe27c8448',t:'MTc0ODI1NzEwMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
