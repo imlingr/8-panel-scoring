@@ -772,30 +772,64 @@
     }
     
     // 選擇評分
-    function selectRating(element, inputIdPrefix) { 
-        const container = element.closest('.rating-container');
-        if (!container) return;
-        container.querySelectorAll('.rating-btn').forEach(btn => btn.classList.remove('selected'));
-        element.classList.add('selected');
-        const ratingValue = element.dataset.value;
-        const ratingValueInput = document.getElementById(`${inputIdPrefix}RatingValue`);
-        if (ratingValueInput) ratingValueInput.value = ratingValue;
-        
-        if (inputIdPrefix === 'self') {
-            formData.selfRating = ratingValue;
-            checkSelfRatingComplete();
-        } else if (inputIdPrefix === 'peer') {
-            const peerEval = formData.peerEvals.find(p => p.peer === currentEvaluatingPeerName);
-            if (peerEval) peerEval.rating = ratingValue;
-            checkPeerRatingComplete();
-        }
+function selectRating(element, inputIdPrefix) {
+    console.log('[selectRating] Called. inputIdPrefix:', inputIdPrefix, 'Element value:', element.dataset.value); // 新增日誌
+    const container = element.closest('.rating-container');
+    if (!container) {
+        console.error('[selectRating] Rating container not found.'); // 新增日誌
+        return;
+    }
+    container.querySelectorAll('.rating-btn').forEach(btn => btn.classList.remove('selected'));
+    element.classList.add('selected');
+    const ratingValue = element.dataset.value;
+    const ratingValueInput = document.getElementById(inputIdPrefix); // 這應該是 'selfRatingValue' 或 'peerRatingValue'
+
+    if (ratingValueInput) {
+        ratingValueInput.value = ratingValue;
+    } else {
+        console.error('[selectRating] Hidden input not found for ID:', inputIdPrefix); // 新增日誌
     }
 
-    // 檢查自評評分是否完成
-    function checkSelfRatingComplete() {
-        formData.selfComment = document.getElementById('selfComment').value.trim();
-        document.getElementById('nextToPeerEval').disabled = !(formData.selfRating && formData.selfComment);
+    if (inputIdPrefix === 'selfRatingValue') { // 確保這裡的 ID 與 HTML onclick 傳入的一致
+        formData.selfRating = ratingValue;
+        console.log('[selectRating] formData.selfRating set to:', formData.selfRating); // 新增日誌
+        console.log('[selectRating] Calling checkSelfRatingComplete...'); // 新增日誌
+        checkSelfRatingComplete();
+    } else if (inputIdPrefix === 'peerRatingValue') {
+        const peerEval = formData.peerEvals.find(p => p.peer === currentEvaluatingPeerName);
+        if (peerEval) {
+            peerEval.rating = ratingValue;
+            console.log('[selectRating] Peer rating set for', currentEvaluatingPeerName, 'to:', peerEval.rating); // 新增日誌
+        }
+        console.log('[selectRating] Calling checkPeerRatingComplete for peer...'); // 新增日誌
+        checkPeerRatingComplete();
     }
+}
+
+    // 檢查自評評分是否完成
+function checkSelfRatingComplete() {
+    console.log('[checkSelfRatingComplete] Called.'); // 新增日誌
+    const selfCommentElement = document.getElementById('selfComment');
+    if (selfCommentElement) {
+        formData.selfComment = selfCommentElement.value.trim();
+    } else {
+        console.error('[checkSelfRatingComplete] selfComment textarea not found.'); // 新增日誌
+        formData.selfComment = ''; // 避免後續出錯
+    }
+
+    console.log('[checkSelfRatingComplete] formData.selfRating:', formData.selfRating); // 新增日誌
+    console.log('[checkSelfRatingComplete] formData.selfComment:', formData.selfComment); // 新增日誌
+
+    const nextButton = document.getElementById('nextToPeerEval');
+    if (nextButton) {
+        constisDisabled = !(formData.selfRating && formData.selfComment);
+        nextButton.disabled = isDisabled;
+        console.log('[checkSelfRatingComplete] Condition (formData.selfRating && formData.selfComment):', (formData.selfRating && formData.selfComment)); // 新增日誌
+        console.log('[checkSelfRatingComplete] nextToPeerEval button disabled set to:', isDisabled); // 新增日誌
+    } else {
+        console.error('[checkSelfRatingComplete] nextToPeerEval button not found.'); // 新增日誌
+    }
+}
 
     // 檢查互評評分是否完成
     function checkPeerRatingComplete() {
@@ -1095,6 +1129,16 @@
     document.addEventListener('DOMContentLoaded', function() {
         rebindCheckboxes(); // Bind all checkbox handlers initially
         showPage('classSelection'); // Initial page
+
+        const selfCommentTextarea = document.getElementById('selfComment');
+if (selfCommentTextarea) {
+    selfCommentTextarea.addEventListener('input', function() { // 將 checkSelfRatingComplete 直接包裝以增加日誌
+        console.log('[selfComment input event] Input detected, calling checkSelfRatingComplete...'); // 新增日誌
+        checkSelfRatingComplete();
+    });
+} else {
+    console.error('[DOMContentLoaded] selfComment textarea not found for event listener setup.'); // 新增日誌
+}
 
         document.getElementById('nextToGroup').addEventListener('click', function() { if (formData.class) showPage('groupSelection'); });
         document.getElementById('nextToSelfEval').addEventListener('click', function() { if (formData.group) showPage('selfSelection'); });
