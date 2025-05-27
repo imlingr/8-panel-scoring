@@ -1014,9 +1014,10 @@
                 const response = await fetch(scriptURL, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json', // 指定內容類型為 JSON
-                    },
                     mode: 'cors', //  確保可以跨域請求
+                      // 'Content-Type': 'application/json' // 暫時移除或改成 text/plain
+                        'Content-Type': 'text/plain'
+                    },
                     body: JSON.stringify(formattedData),
                 });
                 
