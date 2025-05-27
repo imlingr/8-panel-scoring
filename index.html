@@ -991,43 +991,53 @@
 
         // 提交表單到Google試算表
         async function submitToGoogleSheet() {
-    document.getElementById('loadingOverlay').classList.remove('hidden');
-    // formData.timestamp = new Date().toISOString(); // 暫時註解掉
-    // const formattedData = formatDataForSubmission(formData); // 暫時註解掉
-
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxOpWCRKyVjWdeJ51ooLGVO1GlUnj4r4urAXWZujAfbQKwBDCcxHNMl_hW6dkmqiRGq/exec'; // 再次確認這是正確的網址
-
-    console.log("Attempting to fetch (simple test) to URL:", scriptURL); // 新增日誌
-
-    try {
-        // 發送一個非常簡單的 GET 請求（如果 Apps Script 有 doGet）
-        // 或者一個空的 POST 請求來觸發 doOptions/doPost
-        const response = await fetch(scriptURL, { // 暫時用 GET 測試 doGet
-            method: 'GET', // 或者 'POST' 如果您想測試 POST 路徑，但 body 為空
-            mode: 'cors'   // 保持 'cors'
-            // headers: { 'Content-Type': 'application/json' }, // 暫時移除 header
-            // body: JSON.stringify({test: "data"}), // 暫時用簡單的 body 或移除
-        });
-
-        console.log("Fetch response (simple test):", response); // 新增日誌
-
-        if (response.ok) {
-            // const responseData = await response.json(); // 暫時註解掉，因為GET的回應可能是HTML
-            console.log('Simple fetch successful. Response status:', response.status);
-            // 這裡可以先顯示一個簡單的成功訊息，而不是跳轉到 success 頁面
-            alert("簡易測試請求成功！請檢查 Apps Script doGet 執行紀錄。");
-        } else {
-            const errorText = await response.text();
-            console.error('Simple fetch failed. Status:', response.status, 'Response text:', errorText);
-            throw new Error('簡易測試請求失敗，狀態碼：' + response.status + '，訊息：' + errorText);
+            
+            console.log("Script URL being used:", scriptURL);
+            
+            // 顯示載入中遮罩
+            document.getElementById('loadingOverlay').classList.remove('hidden');
+            
+            // 添加時間戳
+            formData.timestamp = new Date().toISOString();
+            
+            try {
+                // 將表單資料轉換為適合提交的格式
+                const formattedData = formatDataForSubmission(formData);
+                
+                // 使用更新後的Google Apps Script Web App URL
+                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                // !! 重要：請務必將下面的 YOUR_NEW_SCRIPT_URL_HERE 替換成您自己的 Apps Script 網址 !!
+                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxOpWCRKyVjWdeJ51ooLGVO1GlUnj4r4urAXWZujAfbQKwBDCcxHNMl_hW6dkmqiRGq/exec'; 
+                
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json', // 指定內容類型為 JSON
+                    },
+                    mode: 'cors', //  確保可以跨域請求
+                    body: JSON.stringify(formattedData),
+                });
+                
+                if (response.ok) {
+                    const responseData = await response.json(); // 解析Apps Script回傳的JSON
+                    console.log('提交成功:', responseData);
+                    // 隱藏載入中遮罩
+                    document.getElementById('loadingOverlay').classList.add('hidden');
+                    formSubmitted = true;
+                    showPage('success');
+                } else {
+                    const errorData = await response.text(); // 如果不是JSON，獲取文字錯誤訊息
+                    console.error('提交回應非OK:', response.status, errorData);
+                    throw new Error('提交失敗，狀態碼：' + response.status + '，訊息：' + errorData);
+                }
+            } catch (error) {
+                console.error('提交錯誤:', error);
+                // 隱藏載入中遮罩
+                document.getElementById('loadingOverlay').classList.add('hidden');
+                alert('提交失敗，請檢查控制台(Console)的錯誤訊息，並確認Apps Script已正確部署且允許任何人存取。錯誤訊息：' + error.message);
+            }
         }
-    } catch (error) {
-        console.error('提交錯誤 (簡易測試):', error);
-        alert('簡易測試提交失敗，請檢查控制台(Console)的錯誤訊息。錯誤訊息：' + error.message);
-    } finally {
-        document.getElementById('loadingOverlay').classList.add('hidden'); // 確保遮罩總是會隱藏
-    }
-}
 
         // 格式化資料以便提交
         function formatDataForSubmission(data) {
